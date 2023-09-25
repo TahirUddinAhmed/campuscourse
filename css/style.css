@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+header nav {
+    background-color: #fff;
+}
+header nav .navbar-brand {
+    font-weight: 700;
+    color: #281af2;
+}
+.main {
+    padding: 2rem 3rem;
+    background-image: linear-gradient(90deg, rgb(0, 26, 87), rgb(246, 234, 184));
+    color: #efefef;
+}
+.enroll-btn {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: transparent;
+}
+.enroll-btn p {
+    font-weight: bold;
+}
+.enroll {
+    padding: 7px 2rem;
+    border: none;
+    background-color: #efefef;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgb(82, 82, 82);
+}
+.register {
+    color: #000;
+}
+
+.content {
+    background-color: hsl(0, 0%, 94%);
+    
+}
+.content p {
+    text-align: justify;
+}
