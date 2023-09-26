@@ -22,7 +22,7 @@ if($success_msg != '') {
         <div class="row">
             <div class="col-md-6">
                 <div class="course-about">
-                    <h3>Object-Oriented Programming in C++</h3>
+                    <h3>C Programming For BCA 1st Sem</h3>
                     <p>In this course, you'll learn everything you need to know to master the C++ programming language, from basic concepts to advanced techniques</p>
                     <div class="instructor">
                         <img src="#" alt="">
