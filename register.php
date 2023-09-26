@@ -29,6 +29,7 @@
                     <div class="form-outline mb-4">
                         <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com"/>
                         <label class="form-label" for="email">Email address</label>
+                        <p><span class="email-check"></span></p>
                     </div>
 
                     <p class="text-muted text-light">Are You a Morigaon College Student ?</p>
