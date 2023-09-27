@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="phone" id="phone" name="phone" class="form-control" placeholder="Enter your phone number"/>
+                        <input type="phone" id="phone" name="phone" class="form-control" maxlength="10" placeholder="Enter your phone number"/>
                         <label class="form-label" for="phone">Phone</label>
                     </div>
 

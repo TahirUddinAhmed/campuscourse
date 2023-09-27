@@ -32,7 +32,7 @@ if(isset($_POST['enroll'])) {
          if(!$res) {
             die("QUERY FAILED " . mysqli_error($conn));
          } else {
-            $success_msg = "you are successfully enrolled in this course";
+            $success_msg = "you've successfully enrolled in this course";
          }
       }
     }

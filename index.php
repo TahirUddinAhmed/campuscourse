@@ -11,7 +11,7 @@ if($success_msg != '') {
   <h4 class="alert-heading">Congratulations</h4>
   <p><?php echo $success_msg ?? null ?></p>
   <hr>
-  <a href="https://chat.whatsapp.com/EbbgpvOmnkLLBZL74p9lq5" class="btn bt-sm btn-primary">Join our What's app Group</a>
+  <a href="https://chat.whatsapp.com/BJJvWbJvuoDJHnoKNyvu9o" class="btn bt-sm btn-primary">Join our What's app Group</a>
 </div>
 <?php
 }

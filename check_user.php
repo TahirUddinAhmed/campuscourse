@@ -11,3 +11,7 @@ if(isset($_POST['email'])) {
         echo "available";
     }
 }
+
+if(isset($_POST['phone'])) {
+    echo "hello there";
+}

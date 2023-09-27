@@ -1,8 +1,8 @@
 $(document).ready(function() {
+  
   // email check 
   $("#email").on("blur", function() {
     const email = $(this).val();
-
    if(email !== '') {
     // send data using ajax
     $.ajax({
