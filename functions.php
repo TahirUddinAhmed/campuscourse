@@ -17,3 +17,14 @@ function checkEmail(String $email): bool {
         return false;
     }
 }
+
+// check input fields 
+function check_input($data) {
+    global $conn;
+    $data = trim($data);
+    $data = htmlspecialchars($data);
+    $data = stripslashes($data);
+    $data = mysqli_real_escape_string($conn, $data);
+
+    return $data;
+}

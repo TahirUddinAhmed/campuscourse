@@ -1,19 +1,20 @@
 <?php
+require_once 'functions.php';
 if(isset($_POST['enroll'])) {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $college = $_POST['college'];
-    $class = $_POST['class'];
-    $phone = $_POST['phone'];
+    $first_name = checkEmail($_POST['first_name']); 
+    $last_name = check_input($_POST['last_name']); 
+    $email = check_input($_POST['email']); 
+    $college = check_input($_POST['college']); 
+    $class = check_input($_POST['class']); 
+    $phone = check_input($_POST['phone']); 
 
     // clean up the input fields
-    $first_name = mysqli_real_escape_string($conn, $first_name);
-    $last_name = mysqli_real_escape_string($conn, $last_name);
-    $email = mysqli_real_escape_string($conn, $email);
-    $college = mysqli_real_escape_string($conn, $college);
-    $class = mysqli_real_escape_string($conn, $class);
-    $phone = mysqli_real_escape_string($conn, $phone);
+   //  $first_name = mysqli_real_escape_string($conn, $first_name);
+   //  $last_name = mysqli_real_escape_string($conn, $last_name);
+   //  $email = mysqli_real_escape_string($conn, $email);
+   //  $college = mysqli_real_escape_string($conn, $college);
+   //  $class = mysqli_real_escape_string($conn, $class);
+   //  $phone = mysqli_real_escape_string($conn, $phone);
 
     // check if already enrolled
     $checkUser = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `students` WHERE `email` = '$email'"));
