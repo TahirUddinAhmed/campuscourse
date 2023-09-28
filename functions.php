@@ -28,3 +28,19 @@ function check_input($data) {
 
     return $data;
 }
+
+// insert data
+function insert_student($conn, $f_name, $l_name, $email, $college, $class, $phone) {
+    $query = "INSERT INTO `students` (`first_name`, `last_name`, `email`, `college`, `class`, `phone`, `date`) VALUES (?, ?, ?, ?, ?, ?, current_timestamp())";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('ssssss', $f_name, $l_name, $email, $college, $class, $phone);
+    
+    // check the connection
+    if($stmt->execute()) {
+        $msg = "you've successfully enrolled in this course";
+    } else {
+        $msg = "Error: " . $stmt->error;
+    }
+
+    return $msg;
+}

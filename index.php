@@ -5,7 +5,7 @@ include("reg.inc.php");
 
 
 <?php
-if($success_msg != '') {
+if(isset($success_msg)) {
 ?>
 <div class="alert alert-success" role="alert">
   <h4 class="alert-heading">Congratulations</h4>
