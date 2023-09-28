@@ -1,7 +1,7 @@
 <?php
 require_once 'functions.php';
 if(isset($_POST['enroll'])) {
-    $first_name = checkEmail($_POST['first_name']); 
+    $first_name = check_input($_POST['first_name']); 
     $last_name = check_input($_POST['last_name']); 
     $email = check_input($_POST['email']); 
     $college = check_input($_POST['college']); 

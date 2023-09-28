@@ -33,13 +33,21 @@ if($success_msg != '') {
                         <button type="button" class="enroll" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Entroll Now
                         </button>
-                        <p>2 days free class</p>
+                        <p>3 days free class</p>
   
                         <!-- registration form -->
                         <?php include("register.php"); ?>
                     </div> 
+                    
+                    <?php
+                    if($no_of_st == 1) {
+                      echo '<p>' . $no_of_st .' Student already enrolled</p>';
+                    } else if($no_of_st > 1) {
+                      echo '<p>' . $no_of_st .' Students already enrolled</p>';
+                    }
 
-                    <p><?= $no_of_st ?? null ?> Students already enrolled</p>
+                    ?>
+                    
                 </div>
             </div>
             <div class="col-md-6 text-center">
