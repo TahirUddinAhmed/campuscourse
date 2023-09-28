@@ -37,7 +37,7 @@ function insert_student($conn, $f_name, $l_name, $email, $college, $class, $phon
     
     // check the connection
     if($stmt->execute()) {
-        $msg = "you've successfully enrolled in this course";
+        $msg ="Hello, " . $f_name . " You've successfully enrolled in this course";
     } else {
         $msg = "Error: " . $stmt->error;
     }
