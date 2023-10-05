@@ -4,7 +4,7 @@ include("reg.inc.php");
 ?>
 
 
-<?php
+<!-- <?php
 if(isset($success_msg)) {
 ?>
 <div class="alert alert-success" role="alert">
@@ -16,7 +16,7 @@ if(isset($success_msg)) {
 <?php
 }
 
-?>
+?> -->
 
     <div class="container-fluid justify-center align-center main">
         <div class="row">
