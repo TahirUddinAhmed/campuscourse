@@ -17,7 +17,7 @@ include("reg.inc.php");
                        <input type="password" name="pwd" autocomplete="off" spellcheck="off" class="form-control" placeholder="Enter password">
                    </div>
                    <div class="submit-btn">
-                    <button type="submit" class="btn btn-primary mb-4 login-btn">Login</button>
+                    <button type="submit" class="btn btn-primary mb-4 login-btn">Sign In</button>
                    </div>
                    
                 
