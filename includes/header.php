@@ -29,11 +29,13 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Entrolled Students</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.php" class="btn btn-primary">Login</a>
-                  </li>
+                  <!-- <li class="nav-item">
+                    
+                  </li> -->
                 </ul>
+                <a href="login.php" class="login-nav-btn">Login</a>
               </div>
+              
             </div>
           </nav>
     </header>
