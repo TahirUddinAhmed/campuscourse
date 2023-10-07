@@ -1,4 +1,12 @@
 <?php include("../config/DB.php") ?>
+<?php
+
+  if(!isset($_SESSION['admin_id'])) {
+    header("location: login.php");
+  }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

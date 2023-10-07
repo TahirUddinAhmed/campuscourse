@@ -23,7 +23,18 @@ if(isset($_POST['delete'])) {
  }
  
 ?>
+   
     <div class="container mt-5">
+      <div class="row">
+        <div class="col-8">
+        <h2 class="mb-5 text-primary">Welcome back <span class="admin_name"> <?= $_SESSION['admin_name'] ?></span></h2>
+        </div>
+        <div class="col-4 text-end">
+          <a href="logout.php" class="btn btn-danger">Logout</a>
+        </div>
+      
+      </div>
+      
         <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
               <tr>
