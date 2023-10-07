@@ -7,10 +7,10 @@ include("reg.inc.php");
         <div class="container login-page">
             <div class="login-form">
                 <h2 id="login-heading">Login </h2>
-                <form action="" method="post">
+                <form action="includes/login.inc.php" method="post">
                    <div class="mb-1">
-                       <label for="username">Username</label>
-                       <input type="text" id="username" name="username" autocomplete="off" spellcheck="off" class="form-control" placeholder="Enter username">
+                       <label for="username">Email</label>
+                       <input type="email" id="username" name="email" autocomplete="off" spellcheck="off" class="form-control" placeholder="Enter email">
                        <span class="text-danger m-2 error-username"></span>
                    </div>
                    <div class="mb-1 pwd-container">

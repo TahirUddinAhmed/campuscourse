@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  // password toggle show - hide
    $(document).on("click", "#toggle-password", function() {
      const password = $("#password");
 
@@ -19,7 +20,7 @@ $(document).ready(function(){
 
       if(username === '' && password === '') {
         $(".error-username").fadeIn();
-        $(".error-username").html("Username is required!");
+        $(".error-username").html("Email is required!");
         $(".error-pwd").fadeIn();
         $(".error-pwd").html("Password is required");
         return false;
@@ -32,7 +33,7 @@ $(document).ready(function(){
 
       if(username === '') {
         $(".error-username").fadeIn();
-        $(".error-username").html("Username is required!");
+        $(".error-username").html("Email is required!");
         return false;
       } else {
         $(".error-username").fadeOut();
