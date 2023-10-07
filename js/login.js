@@ -49,4 +49,36 @@ $(document).ready(function(){
         $(".error-pwd").html("");
       }
    });
+
+   // check if email is available or not
+   $("#username").blur(function() {
+    const email = $(this).val();
+
+    // send the email id for the check 
+    if(email !== '') {
+      $.ajax({
+        type: "POST",
+        url: "check_user.php",
+        data: {
+          email: email
+        },
+        success: function(response) {
+          if(response == 'taken') {
+            $("#username").css("border-color", "green");
+            $(".error-username").html("");
+            $("#loginForm").prop("disabled", false);
+          } else {
+            $("#username").css("border-color", "red");
+            $(".error-username").html("You haven't registered yet!");
+            // don't enable he register 
+            $("#loginForm").prop("disabled", true);
+          }
+        }
+      });
+    } else {
+      $("#username").css("border-color", "green");
+      $(".error-username").html("");
+      $("#loginForm").prop("disabled", false);
+    }
+   });
 });
