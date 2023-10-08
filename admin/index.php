@@ -1,4 +1,7 @@
 <?php include("inc/admin-header.php") ?>
+<?php 
+require_once 'functions.php';
+?>
 <?php
  $query = "SELECT * FROM `students`";
  $res = mysqli_query($conn, $query);
@@ -23,6 +26,8 @@ if(isset($_POST['delete'])) {
  }
  
 ?>
+
+  
    
     <div class="container mt-5">
       <div class="row">
@@ -34,6 +39,59 @@ if(isset($_POST['delete'])) {
         </div>
       
       </div>
+
+      <?php
+
+   // update the password
+   if(isset($_POST['update'])) {
+    $id = check_input($_POST['id']);
+    $password = check_input($_POST['password']);
+
+    if(!empty($password)) {
+      update_pwd($conn, $id, $password);
+    } 
+
+
+
+   }
+
+
+   if(isset($_GET['update'])) {
+    $student_id = $_GET['update'];
+
+    $sql = "SELECT * FROM `students` WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $student_id);
+    $stmt->execute();
+    $res = $stmt->get_result();
+
+    while($data = mysqli_fetch_assoc($res)) {
+      $fname = $data['first_name'];
+      $lname = $data['last_name'];
+      $password = $data['password'];
+      $fullname = $fname . " " . $lname;
+
+    }
+
+   
+
+    ?>
+    <div class="container">
+      <h2>Update Password</h2>
+      <form action="" method="post">
+        <input type="hidden" name="id" value="<?php echo $student_id ?>">
+        <input type="text" name="name" class="form-control mb-2" value="<?= $fullname ?>">
+        <input type="text" name="password" id="st_pwd" class="form-control" value="<?= $password ?>" placeholder="update password">
+        <input type="submit" name="update" value="update" class="btn btn-primary mt-3">
+      </form>
+    </div>
+    <hr>
+      
+
+   <?php
+   }
+
+  ?>
       
         <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
@@ -68,13 +126,16 @@ if(isset($_POST['delete'])) {
                   <p class="fw-normal mb-1"><?php echo $phone ?></p>
                   <p class="text-muted mb-0"><?php echo $class ?></p>
                 </td>
+                <td>
                 <form method="post">
                   <input type="hidden" name="id" value="<?= $id ?>">
-                  <td>
+                  
                    <input type="submit" name="delete" value="Delete" class="btn btn-sm btn-danger">
-                  </td>
+                  
                   
                 </form>
+                  <a href="?update=<?=$id?>" data-uid="<?= $id ?>" id="update-pwd" class="btn btn-sm btn-success mt-2">Update</a>
+                </td>
                 <!-- <td>
                   <button type="button" class="btn btn-link btn-sm btn-rounded">
                     Edit
@@ -102,4 +163,31 @@ if(isset($_POST['delete'])) {
             </tbody>
           </table>
     </div>
+
+    <!-- Update password modal -->
+    <!-- <div class="modal fade" id="update-pwd-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Update Password</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="" method="post">
+              <input type="text" name="st-pass" id="st_pwd" class="form-control" placeholder="update password">
+              <input type="submit" value="Update" class="btn btn-primary">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- !Update password modal -->
+
+
+
 <?php include("inc/admin-footer.php") ?>
+

@@ -10,4 +10,13 @@ $(document).ready(function() {
         $(".form-err").html("");
       }
    });
+
+   $(document).on("click", "#update-pwd", function() {
+      const student_id = $(this).data("uid");
+
+      // $("#update-pwd-modal").modal('show');
+      console.log(student_id);
+      $("#update-pwd-modal").modal("show");
+      
+   });
 });

@@ -67,3 +67,14 @@ function login_admin($conn, string $email, $pwd) {
         
      }
 }
+
+function update_pwd($conn, int $id, string $password) {
+    $sql = "UPDATE students SET password = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('si', $password, $id);
+    
+    if($stmt->execute()) {
+        header("location: index.php");
+    } 
+
+}
