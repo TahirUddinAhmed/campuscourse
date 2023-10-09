@@ -133,6 +133,13 @@ header nav .navbar-brand {
     color: #000;
 }
 
+.profile-btn {
+    width: 40px;
+    border: 1px solid;
+    padding: 0.4rem;
+    border-radius: 20px;
+}
+
 
 @media only screen and (max-width: 600px) {
     .main {

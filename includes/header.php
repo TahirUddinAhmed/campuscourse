@@ -33,7 +33,14 @@
                     
                   </li> -->
                 </ul>
-                <a href="login.php" class="login-nav-btn">Login</a>
+               <?php
+                  if(isset($_SESSION['student_id'])) {
+                    echo '<a href="profile.php" class=""><img class="profile-btn" src="./assets/avatar/profile.svg"></a>';
+                  } else {
+                    echo '<a href="login.php" class="login-nav-btn">Login</a>';
+                  }
+                ?>
+                
               </div>
               
             </div>

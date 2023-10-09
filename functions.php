@@ -44,3 +44,35 @@ function insert_student($conn, $f_name, $l_name, $email, $college, $class, $phon
 
     return $msg;
 }
+
+function login_student($conn, string $email, $password) {
+    $sql = "SELECT * FROM `students` WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $res = $stmt->get_result();
+
+    while($data = mysqli_fetch_assoc($res)) {
+        $id = $data['id'];
+        $name = $data['first_name'];
+        $db_email = $data['email'];
+        $db_pwd = $data['password'];
+    }
+
+    $checkPwd = $password == $db_pwd;
+
+    if($checkPwd !== true) {
+        header("location: ../login.php?wrongpwd");
+        exit();
+    } else if($checkPwd == true) {
+        // start session
+        session_start();
+
+        $_SESSION['student_id'] = $id;
+        $_SESSION['student_name'] = $name;
+        $_SESSION['student_email'] = $db_email;
+
+        header("location: ../index.php?welcome");
+
+    }
+}

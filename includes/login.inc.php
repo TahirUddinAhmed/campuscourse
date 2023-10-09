@@ -6,8 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = check_input($_POST['email']);
     $password = check_input($_POST['pwd']);
 
-    echo "Email : " . $email . "<br>";
-    echo "password: " . $password;
+    login_student($conn, $email, $password);
 } else {
     header("location: ../login.php");
 }
