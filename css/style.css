@@ -135,9 +135,17 @@ header nav .navbar-brand {
 
 .profile-btn {
     width: 40px;
-    border: 1px solid;
+    border: 2px solid;
     padding: 0.4rem;
     border-radius: 20px;
+}
+.profile-header {
+    background-color: #262626;
+    color: #fff;
+    padding: 2rem;
+}
+.profile-header .welcome-section {
+    margin: 1rem;
 }
 
 

@@ -1,35 +1,47 @@
 <?php
  require_once 'includes/header.php';
+
+ if(!isset($_SESSION['student_id'])) {
+    header("location: index.php");
+ }
 ?>
- <div class="container">
-    <h3>Welcome back user</h3>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint ad rerum vel cum repellendus voluptatum doloremque? Sit quos optio atque voluptas cumque voluptatem unde error.</p>
+
+    <div class="profile-header">
+        <h2 class="heading">My Learning</h2>
+        <div class="welcome-section">
+            <h3>Hi <?= $_SESSION['student_name'] ?> </h3>
+            <p>Empower your education journey with CampusCours: Where knowledge meets convenience. Unlock a world of online learning excellence at your fingertips.</p>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
     <!-- Courses -->
+    <div class="container-fluid mt-5">
+        <h3>Course</h3>
+        <hr>
+    </div>
+    <div class="card testimonial-card mb-5" style="max-width: 20rem;">
 
-    <!-- Card -->
-<div class="card">
+          <!-- Background color -->
+          <div class="card-up indigo lighten-1"></div>
 
-<!-- Card image -->
-<div class="view overlay">
-  <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).webp"
-    alt="Card image cap">
-  <a href="#!">
-    <div class="mask rgba-white-slight"></div>
-  </a>
-</div>
+          <!-- Avatar -->
+          <div class="avatar text-center mt-3 white">
+            <img src="./assets/course-img/c.png" width="90" class="rounded-circle" alt="course">
+          </div>
+          <hr>
 
-<!-- Card content -->
-<div class="card-body">
+          <!-- Content -->
+          <div class="card-body">
+            <!-- Name -->
+            <h5 class="card-title">C Programming</h5>
+            <p class="text-muted">Instructor: Tahir Ahmed</p>
+            <div class="mt-4">
+                <a href="#" class="btn btn-outline-primary">Go to explore</a>
+            </div>
+          </div>
 
-  <!-- Title -->
-  <h4 class="card-title">Card title</h4>
-  <!-- Text -->
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-    content.</p>
-  <!-- Button -->
-  <a href="#" class="btn btn-primary">Button</a>
-
-</div>
+        </div>
 
 </div>
 <!-- Card -->
