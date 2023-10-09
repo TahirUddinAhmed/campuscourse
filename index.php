@@ -60,7 +60,6 @@ if(isset($success_msg)) {
         
                 
     </div>
-
     <div class="containet-fluid course-content">
       <nav id="navbar-example2" class="navbar bg-light px-3">
        
